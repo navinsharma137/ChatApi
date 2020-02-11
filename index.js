@@ -12,7 +12,8 @@ io.on('connection',(socket)=>{
 	});
 	socket.on('messagedetection',(senderNickname,messageContent)=>{
 		console.log(senderNickname+" : "+messageContent)
-		let message = {"message ": messageContent,"senderNickname":senderNickname}
+		let message = {"senderNickname":senderNickname,"message":messageContent}
+		console.log(message);
 		socket.emit('message',message)
 	});
 
